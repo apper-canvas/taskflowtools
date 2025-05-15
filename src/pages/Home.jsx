@@ -32,7 +32,7 @@ function Home({ darkMode, toggleDarkMode }) {
             >
               <CheckCircleIcon className="w-8 h-8" />
             </motion.div>
-            <h1 className="text-2xl font-bold text-gradient">TaskFlow</h1>
+            <h1 className="text-2xl font-bold text-gradient">Tasker</h1>
           </div>
           
           <div className="flex items-center gap-4">
@@ -83,7 +83,7 @@ function Home({ darkMode, toggleDarkMode }) {
       {/* Footer */}
       <footer className="mt-auto py-6 bg-surface-100 dark:bg-surface-800">
         <div className="container mx-auto px-4 text-center text-surface-500">
-          <p>© {new Date().getFullYear()} TaskFlow. Simplify your productivity.</p>
+          <p>© {new Date().getFullYear()} Tasker. Simplify your productivity.</p>
         </div>
       </footer>
     </div>
