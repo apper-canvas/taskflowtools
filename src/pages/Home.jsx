@@ -16,7 +16,7 @@ function Home({ darkMode, toggleDarkMode }) {
 
   // Update task stats when tasks change
   const updateTaskStats = useCallback((total, completed) => {
-    setTaskStats({ total, completed });
+          <h1 className="text-xl md:text-2xl font-bold text-gradient">Tasker1</h1>
   }, []);
 
   return (
