@@ -73,12 +73,17 @@ function MainFeature({ onTasksChange }) {
 
   // Update localStorage when tasks change
   useEffect(() => {
+    // Only save to localStorage when tasks actually change
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    
+  }, [tasks]);
+
+  // Update task stats in parent component separately to avoid dependency issues
+  useEffect(() => {
     // Update task stats in parent component
     const completedTasks = tasks.filter(task => task.completed).length;
     onTasksChange(tasks.length, completedTasks);
-  }, [tasks, onTasksChange]);
+    // Only include onTasksChange since it should now be stable with useCallback
+  }, [tasks, onTasksChange]); 
 
   // Load task being edited into form
   useEffect(() => {

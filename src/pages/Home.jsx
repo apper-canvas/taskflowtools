@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useCallback } from 'react';
+import { motion } from 'framer-motion'; 
 import getIcon from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
 
@@ -15,9 +15,9 @@ function Home({ darkMode, toggleDarkMode }) {
   });
 
   // Update task stats when tasks change
-  const updateTaskStats = (total, completed) => {
+  const updateTaskStats = useCallback((total, completed) => {
     setTaskStats({ total, completed });
-  };
+  }, []);
 
   return (
     <div className="min-h-screen">
