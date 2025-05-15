@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-surface-800 dark:text-surface-100;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary;
+  }
+
+  .card {
+    @apply bg-white dark:bg-surface-800 rounded-xl shadow-card dark:shadow-neu-dark p-4 md:p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-surface-100 dark:bg-surface-700 rounded-lg border border-surface-200 dark:border-surface-600 
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+           dark:text-white placeholder-surface-400;
+  }
+
+  .task-item {
+    @apply relative overflow-hidden transition-all duration-200 hover:translate-x-1;
+  }
+
+  .task-item::before {
+    @apply absolute left-0 top-0 h-full w-1 bg-primary rounded-l-lg transition-all duration-200 transform scale-y-0 origin-bottom;
+    content: "";
+  }
+
+  .task-item:hover::before {
+    @apply scale-y-100;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .neu-shadow {
+    @apply shadow-neu-light dark:shadow-neu-dark;
+  }
+
+  .transition-height {
+    transition: height 0.3s ease;
+  }
+}
+
+/* Import react-toastify CSS */
+@import 'react-toastify/dist/ReactToastify.css';
