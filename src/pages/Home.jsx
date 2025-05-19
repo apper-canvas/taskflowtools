@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion'; 
 import getIcon from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
@@ -18,6 +18,10 @@ function Home({ darkMode, toggleDarkMode }) {
   const updateTaskStats = useCallback((total, completed) => {
           <h1 className="text-xl md:text-2xl font-bold text-gradient">Tasker1</h1>
   }, []);
+
+  useEffect(() => {
+    console.log('abcd : ', abcd);
+  }, [])
 
   return (
     <div className="min-h-screen">
